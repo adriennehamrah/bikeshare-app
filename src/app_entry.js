@@ -3,12 +3,13 @@ import { StyleSheet, Text, View, TextInput, Slider, Dimensions,
          Button, Alert, Keyboard, Image, Platform, Linking } from 'react-native';
 import MapView from 'react-native-maps';
 import { Marker, Callout } from 'react-native-maps';
+import Polyline from '@mapbox/polyline';
 import GeoLib from 'geolib';
 
 // Initial Location centered at 4th and Market SF
 const LATITUDE = 37.785395;
 const LONGITUDE = -122.406270;
-const LATITUDE_DELTA = 0.008;
+const LATITUDE_DELTA = 0.02;
 const LONGITUDE_DELTA = Dimensions.get("window").width /
                         Dimensions.get("window").height * LATITUDE_DELTA
 
@@ -48,7 +49,8 @@ export default class AppEntry extends React.Component {
         longitude: LONGITUDE,
         latitudeDelta: LATITUDE_DELTA,
         longitudeDelta: LONGITUDE_DELTA
-      }
+      },
+      directionCoords: null,
     };
   }
   componentWillMount() {
@@ -86,7 +88,7 @@ export default class AppEntry extends React.Component {
         }
       })
       .catch(e => {
-        console.error(e);
+        console.log(e);
         Alert.alert("Network error. Please try again.");
       });
   }
@@ -115,6 +117,7 @@ export default class AppEntry extends React.Component {
 
   onRegionChange(mapRegion) {
     this.setState({mapRegion});
+    console.log(`onRegionChange. mapRegion: ${mapRegion}`)
   }
 
   verifyLocations(start, end) {
@@ -130,6 +133,7 @@ export default class AppEntry extends React.Component {
           response.json().then( responseJson => {
             this.saveLatLong(responseJson, posStr);
             this.makeABMarkers();
+            this.getDirections();
             this.filterStations();
             this.updateMapRegion();
         }).catch(e => Alert.alert(`Please enter valid ${posStr} address`))}
@@ -142,7 +146,7 @@ export default class AppEntry extends React.Component {
         }
       })
       .catch( e => {
-        console.error(e);
+        console.log(e);
         Alert.alert("Network error. Please try again.");
       });
   }
@@ -162,18 +166,46 @@ export default class AppEntry extends React.Component {
     // make origin marker
     originMarker = <Marker
         key={"originMarker"}
-        coordinate={this.state.originLatLong}
-        image={require('./assets/Amarker.png')}
-    />
+        coordinate={this.state.originLatLong}>
+        <Image source={require('./assets/Amarker.png')}
+               style={{width:15, height:24}}/>
+    </Marker>
     this.setState({originMarker});
 
     // make destination marker
     destMarker = <Marker
         key={"destMarker"}
-        coordinate={this.state.destLatLong}
-        image={require('./assets/Bmarker.png')}
-    />
+        coordinate={this.state.destLatLong}>
+        <Image source={require('./assets/Bmarker.png')}
+               style={{width:15, height:24}}/>
+    </Marker>
     this.setState({destMarker});
+  }
+
+  getDirections() {
+    const sLat = this.state.originLatLong.latitude;
+    const sLong = this.state.originLatLong.longitude;
+    const dLat = this.state.destLatLong.latitude;
+    const dLong = this.state.destLatLong.longitude;
+
+    return fetch(`https://maps.googleapis.com/maps/api/directions/json?origin=${sLat},${sLong}&destination=${dLat},${dLong}&mode=bicycling&key=AIzaSyAW9Fv3Yv5jMrKBPvuGNDJDgftCQY_cF6U`)
+      .then(response => {
+        if (response.ok) {
+          response.json().then( responseJson => {
+            const points = Polyline.decode(responseJson.routes[0].overview_polyline.points);
+            const directionCoords = points.map((point, idx) => {
+              return { latitude: point[0], longitude: point[1] }
+            })
+            this.setState({directionCoords});
+          }).catch(e => console.log(e))
+        }
+        else {
+          console.log('Polyline request failed');
+        }
+      })
+      .catch(e => {
+        console.log(e);
+      });
   }
 
   filterStations() {
@@ -218,8 +250,8 @@ export default class AppEntry extends React.Component {
     const radius = this.calcDistance({latitude:center.latitude, longitude:center.longitude}, this.state.destLatLong);
 
     const newRegion = {
-      latitude: center.latitude,
-      longitude: center.longitude,
+      latitude: parseFloat(center.latitude),
+      longitude: parseFloat(center.longitude),
       latitudeDelta: radius/69 * 2.5,
       longitudeDelta: Dimensions.get("window").width /
                               Dimensions.get("window").height * (radius/69 * 2.5)
@@ -294,8 +326,13 @@ export default class AppEntry extends React.Component {
       <View style={styles.mapContainer}>
         <MapView style={styles.map}
           region={this.state.mapRegion}
-          onRegionChange={() => this.onRegionChange()}
         >
+
+        <MapView.Polyline
+          coordinates={this.state.directionCoords}
+          strokeColor="blue"
+          strokeWidth={2}
+        />
 
         {/* render all initial stations */}
         {this.state.visibleMarkers.map( station => (
