@@ -21,6 +21,7 @@ dependencies: \
   /Users/adriennelin/Desktop/Bikeshare/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTEventDispatcher.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h \
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTJSEnvironment.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTModuleData.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTPerformanceLogger.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Profiler/RCTProfile.h \

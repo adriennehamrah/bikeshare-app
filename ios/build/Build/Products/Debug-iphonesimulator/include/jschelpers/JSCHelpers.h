@@ -51,7 +51,7 @@ namespace ExceptionHandling {
     // method@filename[:line[:column]]
     std::string stack;
   };
-  typedef ExtractedEror(*PlatformErrorExtractor)(const std::exception &ex, const char *context);
+  using PlatformErrorExtractor = std::function<ExtractedEror(const std::exception &ex, const char *context)>;
   extern PlatformErrorExtractor platformErrorExtractor;
 }
 

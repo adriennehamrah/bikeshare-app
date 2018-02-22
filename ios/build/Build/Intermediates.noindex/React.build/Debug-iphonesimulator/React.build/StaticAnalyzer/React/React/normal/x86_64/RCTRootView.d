@@ -32,5 +32,4 @@ dependencies: \
   /Users/adriennelin/Desktop/Bikeshare/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
   /Users/adriennelin/Desktop/Bikeshare/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
   /Users/adriennelin/Desktop/Bikeshare/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/UIView+React.h \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Modules/RCTUIManagerUtils.h
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/UIView+React.h

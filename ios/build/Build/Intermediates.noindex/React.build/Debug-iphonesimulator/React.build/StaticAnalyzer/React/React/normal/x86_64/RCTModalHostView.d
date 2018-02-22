@@ -28,5 +28,4 @@ dependencies: \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTModalHostViewController.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTTouchHandler.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Modules/RCTUIManager.h \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTRootView.h \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTTVRemoteHandler.h
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTRootView.h

@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/ScrollView/RCTScrollViewManager.m \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/ScrollView/RCTScrollViewManager.h \
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTScrollViewManager.m \
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTScrollViewManager.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTConvert.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTAnimationType.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTBorderStyle.h \
@@ -23,9 +23,9 @@ dependencies: \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTInvalidating.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/UIView+React.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTComponent.h \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/ScrollView/RCTScrollView.h \
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTScrollView.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTAutoInsetsProtocol.h \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/ScrollView/RCTScrollableProtocol.h \
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTScrollableProtocol.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTView.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTShadowView.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTRootView.h \

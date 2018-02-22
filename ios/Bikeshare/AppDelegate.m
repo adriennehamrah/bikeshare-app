@@ -11,6 +11,7 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+//@import GoogleMaps
 
 @implementation AppDelegate
 
@@ -32,6 +33,8 @@
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   return YES;
+
+//  [GMSServices provideAPIKey:@"AIzaSyCYg491eVTecMdWbshcqERO1Zr2oypXBfk"];
 }
 
 @end

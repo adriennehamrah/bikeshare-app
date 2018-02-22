@@ -385,7 +385,7 @@ dependencies: \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/json.h \
   /Users/adriennelin/Desktop/Bikeshare/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCHelpers.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Memory.h \
-  /Users/adriennelin/Desktop/Bikeshare/ios/build/Build/Products/Debug-iphonesimulator/include/jsinspector/InspectorInterfaces.h \
+  /Users/adriennelin/Desktop/Bikeshare/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/InspectorInterfaces.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/ReactCommon/cxxreact/JSBigString.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/ReactCommon/cxxreact/JSBundleType.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/ReactCommon/cxxreact/JSCLegacyTracing.h \

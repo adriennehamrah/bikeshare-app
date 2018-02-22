@@ -13,10 +13,10 @@ dependencies: \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTBridge+Private.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTEventDispatcher.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Modules/RCTJSCSamplingProfiler.h \
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTJSEnvironment.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTLog.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTAssert.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTUtils.h \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/DevSupport/RCTPackagerClient.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Profiler/RCTProfile.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/DevSupport/RCTPackagerConnection.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h

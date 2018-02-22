@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/ScrollView/RCTScrollView.m \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/ScrollView/RCTScrollView.h \
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTScrollView.m \
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTScrollView.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTAutoInsetsProtocol.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTEventDispatcher.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTBridge.h \
@@ -10,7 +10,7 @@ dependencies: \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTBridgeModule.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTFrameUpdate.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTInvalidating.h \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/ScrollView/RCTScrollableProtocol.h \
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTScrollableProtocol.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTView.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTBorderStyle.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTComponent.h \

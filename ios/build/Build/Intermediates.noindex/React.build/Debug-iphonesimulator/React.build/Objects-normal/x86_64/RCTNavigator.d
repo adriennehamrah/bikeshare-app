@@ -22,9 +22,9 @@ dependencies: \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTEventDispatcher.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTNavItem.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTComponent.h \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/ScrollView/RCTScrollView.h \
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTScrollView.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTAutoInsetsProtocol.h \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/ScrollView/RCTScrollableProtocol.h \
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTScrollableProtocol.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTView.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTWrapperViewController.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTViewControllerProtocol.h \

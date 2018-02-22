@@ -12,14 +12,14 @@
 #if RCT_DEV // Only supported in dev mode
 
 @class RCTPackagerClientResponder;
-@class RCTReconnectingWebSocket;
+@class RCTSRWebSocket;
 
 extern const int RCT_PACKAGER_CLIENT_PROTOCOL_VERSION;
 
 @protocol RCTPackagerClientMethod <NSObject>
 
-- (void)handleRequest:(NSDictionary<NSString *, id> *)params withResponder:(RCTPackagerClientResponder *)responder;
-- (void)handleNotification:(NSDictionary<NSString *, id> *)params;
+- (void)handleRequest:(id)params withResponder:(RCTPackagerClientResponder *)responder;
+- (void)handleNotification:(id)params;
 
 @optional
 
@@ -30,7 +30,7 @@ extern const int RCT_PACKAGER_CLIENT_PROTOCOL_VERSION;
 
 @interface RCTPackagerClientResponder : NSObject
 
-- (instancetype)initWithId:(id)msgId socket:(RCTReconnectingWebSocket *)socket;
+- (instancetype)initWithId:(id)msgId socket:(RCTSRWebSocket *)socket;
 - (void)respondWithResult:(id)result;
 - (void)respondWithError:(id)error;
 

@@ -13,5 +13,4 @@ dependencies: \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTKeyCommands.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTLog.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTAssert.h \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTUtils.h \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTUtils.h

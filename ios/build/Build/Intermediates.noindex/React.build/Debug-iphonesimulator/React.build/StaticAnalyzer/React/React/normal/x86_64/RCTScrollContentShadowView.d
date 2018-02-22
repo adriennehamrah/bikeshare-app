@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/ScrollView/RCTScrollContentShadowView.m \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/ScrollView/RCTScrollContentShadowView.h \
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTScrollContentShadowView.m \
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTScrollContentShadowView.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTShadowView.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTComponent.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTRootView.h \

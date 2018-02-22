@@ -21,7 +21,7 @@
 
 @interface RCTTextInput : RCTView <RCTFontAttributesDelegate> {
 @protected
-  __weak RCTBridge *_bridge;
+  RCTBridge *_bridge;
   RCTEventDispatcher *_eventDispatcher;
   NSInteger _nativeEventCount;
   NSInteger _mostRecentEventCount;

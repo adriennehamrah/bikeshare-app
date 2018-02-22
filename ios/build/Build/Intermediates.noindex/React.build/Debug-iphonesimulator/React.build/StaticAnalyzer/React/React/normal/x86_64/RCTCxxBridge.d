@@ -423,9 +423,10 @@ dependencies: \
   /Users/adriennelin/Desktop/Bikeshare/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/JSIndexedRAMBundle.h \
   /Users/adriennelin/Desktop/Bikeshare/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/JSBigString.h \
   /Users/adriennelin/Desktop/Bikeshare/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/JSModulesUnbundle.h \
+  /Users/adriennelin/Desktop/Bikeshare/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/JSIndexedRAMBundleRegistry.h \
+  /Users/adriennelin/Desktop/Bikeshare/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/RAMBundleRegistry.h \
   /Users/adriennelin/Desktop/Bikeshare/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/Platform.h \
   /Users/adriennelin/Desktop/Bikeshare/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/MessageQueueThread.h \
-  /Users/adriennelin/Desktop/Bikeshare/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/RAMBundleRegistry.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/CxxBridge/NSDataBigString.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/CxxBridge/RCTJSCHelpers.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/CxxBridge/RCTMessageThread.h \

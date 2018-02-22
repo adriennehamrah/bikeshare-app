@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/DevSupport/RCTPackagerConnection.mm \
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/DevSupport/RCTPackagerConnection.m \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/DevSupport/RCTPackagerConnection.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTDefines.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTAssert.h \
@@ -20,6 +20,10 @@ dependencies: \
   /Users/adriennelin/Desktop/Bikeshare/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
   /Users/adriennelin/Desktop/Bikeshare/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
   /Users/adriennelin/Desktop/Bikeshare/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/DevSupport/RCTPackagerClient.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/../Libraries/WebSocket/RCTReconnectingWebSocket.h \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/../Libraries/WebSocket/RCTSRWebSocket.h
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/../Libraries/WebSocket/RCTSRWebSocket.h \
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/DevSupport/RCTPackagerConnectionBridgeConfig.h \
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/DevSupport/RCTPackagerConnectionConfig.h \
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/DevSupport/RCTReloadPackagerMethod.h \
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/DevSupport/RCTPackagerClient.h \
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/DevSupport/RCTSamplingProfilerPackagerMethod.h

@@ -39,10 +39,7 @@ dependencies: \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTRootShadowView.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTShadowView.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/RCTRootViewInternal.h \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/ScrollView/RCTScrollableProtocol.h \
+  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTScrollableProtocol.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Views/RCTShadowView+Internal.h \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/Surface/RCTSurfaceRootShadowView.h \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/Surface/RCTSurfaceRootShadowViewDelegate.h \
-  /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Base/Surface/RCTSurfaceRootView.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Modules/RCTUIManagerObserverCoordinator.h \
   /Users/adriennelin/Desktop/Bikeshare/node_modules/react-native/React/Modules/RCTUIManagerUtils.h
