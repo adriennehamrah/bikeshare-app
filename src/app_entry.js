@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Slider, Dimensions,
-         Button, Alert, Keyboard, Image, Platform, Linking } from 'react-native';
+         Button, Alert, Keyboard, Image, Platform, Linking, ScrollView } from 'react-native';
 import MapView from 'react-native-maps';
 import { Marker, Callout } from 'react-native-maps';
 import Polyline from '@mapbox/polyline';
@@ -28,21 +28,21 @@ export default class AppEntry extends React.Component {
         destRed:[],
       },
       currLatLong: {
-        latitude: null,
-        longitude: null,
+        latitude: [],
+        longitude: [],
       },
       origin: "",
       destination: "",
       originLatLong: {
-        latitude: null,
-        longitude: null,
+        latitude: [],
+        longitude: [],
       },
       destLatLong: {
-        latitude: null,
-        longitude: null
+        latitude: [],
+        longitude: []
       },
-      originMarker: null,
-      destMarker:null,
+      originMarker: [],
+      destMarker:[],
       distance: .25,
       mapRegion: {
         latitude: LATITUDE,
@@ -50,7 +50,7 @@ export default class AppEntry extends React.Component {
         latitudeDelta: LATITUDE_DELTA,
         longitudeDelta: LONGITUDE_DELTA
       },
-      directionCoords: null,
+      directionCoords: [],
     };
   }
   componentWillMount() {
@@ -132,9 +132,9 @@ export default class AppEntry extends React.Component {
         if (response.ok && getBikes) {
           response.json().then( responseJson => {
             this.saveLatLong(responseJson, posStr);
-            this.makeABMarkers();
             this.getDirections();
             this.filterStations();
+            this.makeABMarkers();
             this.updateMapRegion();
         }).catch(e => Alert.alert(`Please enter valid ${posStr} address`))}
         else if (response.ok) {
@@ -168,7 +168,7 @@ export default class AppEntry extends React.Component {
         key={"originMarker"}
         coordinate={this.state.originLatLong}>
         <Image source={require('./assets/Amarker.png')}
-               style={{width:15, height:24}}/>
+               style={{width:21, height:34}}/>
     </Marker>
     this.setState({originMarker});
 
@@ -177,7 +177,7 @@ export default class AppEntry extends React.Component {
         key={"destMarker"}
         coordinate={this.state.destLatLong}>
         <Image source={require('./assets/Bmarker.png')}
-               style={{width:15, height:24}}/>
+               style={{width:21, height:34}}/>
     </Marker>
     this.setState({destMarker});
   }
@@ -268,12 +268,13 @@ export default class AppEntry extends React.Component {
   openDirections(latS, longS, latD, longD) {
     Platform.select({
       ios: () => {
-          Linking.openURL(`http://maps.apple.com/?saddr=${latS},${longS}&daddr=${latD},${longD}&dirflg=w`)
-                 .catch(e => Alert.alert('Link not valid'));
+        Linking.openURL(`http://maps.apple.com/?saddr=${latS},${longS}&daddr=${latD},${longD}&dirflg=w`)
+               .catch(e => Alert.alert('Link not valid'));
       },
       android: () => {
-          Linking.openURL(`https://www.google.com/maps/dir/?api=1&origin=${latS},${longS}&destination=${latD},${longD}&travelmode=walking`)
-                 .catch(e => Alert.alert('Link not valid'));
+        console.log(`https://www.google.com/maps/dir/?api=1&origin=${latS},${longS}&destination=${latD},${longD}&travelmode=walking`);
+        Linking.openURL(`https://www.google.com/maps/dir/?api=1&origin=${latS},${longS}&destination=${latD},${longD}&travelmode=walking`)
+               .catch(e => Alert.alert('Link not valid'));
       }
     })();
   }
@@ -292,7 +293,7 @@ export default class AppEntry extends React.Component {
               placeholder="Add origin"
               value={this.state.origin}
               onChangeText={ origin => this.setState({origin})}
-              clearTextOnFocus={true}
+              clearButtonMode='while-editing'
             />
           </View>
           <View style={styles.inputRow}>
@@ -300,9 +301,10 @@ export default class AppEntry extends React.Component {
               placeholder="Add destination"
               value={this.state.destination}
               onChangeText={ destination => this.setState({destination})}
+              clearButtonMode='while-editing'
             />
           </View>
-          <Slider
+          <Slider style={styles.slider}
             step={.25}
             maximumValue={2}
             value={this.state.distance}
@@ -322,128 +324,132 @@ export default class AppEntry extends React.Component {
             />*/}
           </View>
         </View>
+        <View style={styles.mapContainer}>
+          <MapView style={styles.map}
+            region={this.state.mapRegion}
+          >
 
-      <View style={styles.mapContainer}>
-        <MapView style={styles.map}
-          region={this.state.mapRegion}
-        >
+            <MapView.Polyline
+              coordinates={this.state.directionCoords}
+              strokeColor="blue"
+              strokeWidth={2}
+            />
 
-        <MapView.Polyline
-          coordinates={this.state.directionCoords}
-          strokeColor="blue"
-          strokeWidth={2}
-        />
-
-        {/* render all initial stations */}
-        {this.state.visibleMarkers.map( station => (
-          <Marker
-            key={station.id}
-            coordinate={station}>
-              <Callout>
-                <View style={styles.callout}>
-                  <Text>{station.stAddress1}</Text>
-                  <Button
+            {/* render all initial stations */}
+            {this.state.visibleMarkers.map( station => (
+              <Marker
+                key={station.id}
+                coordinate={station}>
+                  <Callout
                     onPress={() => this.openDirections(this.state.currLatLong.latitude,
                                                        this.state.currLatLong.longitude,
                                                        station.latitude,
-                                                       station.longitude)}
-                    title="Directions to here"
-                  />
-                </View>
-              </Callout>
-          </Marker>
-        ))}
+                                                       station.longitude)}>
+                    <View style={styles.callout}>
+                      <Text>{station.stAddress1}</Text>
+                      <Button
+                        onPress={() => {}}
+                        title="Directions to here"
+                      />
+                    </View>
+                  </Callout>
+              </Marker>
+            ))}
 
-        {/* render origin and destination A, B markers */}
-        {this.state.originMarker}
-        {this.state.destMarker}
+            {/* render origin and destination A, B markers */}
+            {this.state.originMarker}
+            {this.state.destMarker}
 
-        {/* render green origin markers for bikes stations with bikes */}
-        {this.state.filteredStations.originGreen.map(station => (
-          <Marker
-            key={station.id + 'originGreen'}
-            coordinate={station}
-            pinColor='green'>
-            <Callout>
-              <View style={styles.callout}>
-                <Text>{station.stAddress1}</Text>
-                <Button
+            {/* render green origin markers for bikes stations with bikes */}
+            {this.state.filteredStations.originGreen.map(station => (
+              <Marker
+                key={station.id + 'originGreen'}
+                coordinate={station}
+                pinColor='green'>
+                <Callout
                   onPress={() => this.openDirections(this.state.originLatLong.latitude,
                                                      this.state.originLatLong.longitude,
                                                      station.latitude,
-                                                     station.longitude)}
-                  title="Directions to here"
-                />
-              </View>
-            </Callout>
-          </Marker>
-        ))}
+                                                     station.longitude)}>
+                  <View style={styles.callout}>
+                    <Text>{station.stAddress1}</Text>
+                    <Button
+                      onPress={() => {}}
+                      title="Directions to here"
+                    />
+                  </View>
+                </Callout>
+              </Marker>
+            ))}
 
-        {/* render red origin markers for empty bike stations */}
-        {this.state.filteredStations.originRed.map(station => (
-          <Marker
-            key={station.id + 'originRed'}
-            coordinate={station}
-            pinColor='red'>
-            <Callout>
-              <View style={styles.callout}>
-                <Text>{station.stAddress1}</Text>
-                <Button
+            {/* render red origin markers for empty bike stations */}
+            {this.state.filteredStations.originRed.map(station => (
+              <Marker
+                key={station.id + 'originRed'}
+                coordinate={station}
+                pinColor='red'>
+                <Callout
                   onPress={() => this.openDirections(this.state.originLatLong.latitude,
                                                      this.state.originLatLong.longitude,
                                                      station.latitude,
-                                                     station.longitude)}
-                  title="Directions to here"
-                />
-              </View>
-            </Callout>
-          </Marker>
-        ))}
+                                                     station.longitude)}>
+                  <View style={styles.callout}>
+                    <Text>{station.stAddress1}</Text>
+                    <Button
+                      onPress={() => {}}
+                      title="Directions to here"
+                    />
+                  </View>
+                </Callout>
+              </Marker>
+            ))}
 
-        {/* render green destination markers for bike stations with open docks */}
-        {this.state.filteredStations.destGreen.map(station => (
-          <Marker
-            key={station.id + 'destGreen'}
-            coordinate={station}
-            pinColor='green'>
-            <Callout>
-              <View style={styles.callout}>
-                <Text>{station.stAddress1}</Text>
-                <Button
+            {/* render green destination markers for bike stations with open docks */}
+            {this.state.filteredStations.destGreen.map(station => (
+              <Marker
+                key={station.id + 'destGreen'}
+                coordinate={station}
+                pinColor='green'>
+                <Callout
                   onPress={() => this.openDirections(station.latitude,
                                                      station.longitude,
                                                      this.state.destLatLong.latitude,
-                                                     this.state.destLatLong.longitude)}
-                  title="Directions from here"
-                />
-              </View>
-            </Callout>
-          </Marker>
-        ))}
+                                                     this.state.destLatLong.longitude)}>
+                  <View style={styles.callout}>
+                    <Text>{station.stAddress1}</Text>
+                    <Button
+                      onPress={() => {}}
+                      title="Directions from here"
+                    />
+                  </View>
+                </Callout>
+              </Marker>
+            ))}
 
-        {/* render red distination markers for bike stations with full docks */}
-        {this.state.filteredStations.destRed.map(station => (
-          <Marker
-            key={station.id + 'destRed'}
-            coordinate={station}
-            pinColor='red'>
-            <Callout>
-              <View style={styles.callout}>
-                <Text>{station.stAddress1}</Text>
-                <Button
+            {/* render red distination markers for bike stations with full docks */}
+            {this.state.filteredStations.destRed.map(station => (
+              <Marker
+                key={station.id + 'destRed'}
+                coordinate={station}
+                pinColor='red'>
+                <Callout
                   onPress={() => this.openDirections(station.latitude,
                                                      station.longitude,
                                                      this.state.destLatLong.latitude,
-                                                     this.state.destLatLong.longitude)}
-                  title="Directions from here"
-                />
-              </View>
-            </Callout>
-          </Marker>
-        ))}
+                                                     this.state.destLatLong.longitude)}>
+                  <View style={styles.callout}>
+                    <Text>{station.stAddress1}</Text>
+                    <Button
+                      onPress={() => {}}
+                      title="Directions from here"
+                    />
+                  </View>
+                </Callout>
+              </Marker>
+            ))}
 
-        </MapView>
-      </View>
+          </MapView>
+        </View>
       </View>
     );
   }
@@ -455,7 +461,7 @@ const styles = StyleSheet.create({
   },
   welcomeContainer: {
     flex: 1,
-    marginTop: 35,
+    marginTop: 40,
     alignItems: 'center'
   },
   headerText: {
@@ -473,12 +479,16 @@ const styles = StyleSheet.create({
   },
   inputText: {
     height: 40,
-    width: Dimensions.get('window').width
+    width: Dimensions.get('window').width - 10
+  },
+  slider: {
+    marginTop: 10,
+    marginBottom: 10,
   },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 5,
+    marginTop: 8,
   },
   button: {
 

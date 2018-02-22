@@ -33,7 +33,7 @@
             android:name="com.bikeshare.MainActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="adjustNothing" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -44,7 +44,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCYg491eVTecMdWbshcqERO1Zr2oypXBfk" />
+            android:value="AIzaSyDjtfv_n1vVjZRa_0MI0AEy1IUJWMhL_Jw" />
 
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
