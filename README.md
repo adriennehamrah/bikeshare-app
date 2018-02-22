@@ -24,6 +24,8 @@ Click on a bike station to open directions in the Apple or Google maps app!
 - Mapbox Polyline
 
 ## Testing 
+- Run `npm install` first for dependencies.
+
 - Android  
     - Latest version of Google Play Services required.
     - Device must be on API Level 26 or lower.
