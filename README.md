@@ -27,12 +27,14 @@ Click on a bike station to open directions in the Apple or Google maps app!
 - Run `npm install` first for dependencies.
 
 - Android  
-    - Latest version of Google Play Services required.
+    - After connecting phone to Android Studio or starting emulator, run `npm run android` in terminal.
     - Device must be on API Level 26 or lower.
+    - Latest version of Google Play Services required.
     - Disable Dev Mode for faster performance.
     - Start and end markers and route line may not render at first. Please wait for program to finish loading before searching.
    
 - iOS
+    - Can open directly in Xcode or `npm run ios`.
     - Xcode testing on iPhone not compatible with beta 11.3.
 
 ## Future Deployment
